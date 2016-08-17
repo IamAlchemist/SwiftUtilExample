@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import CleanroomLogger
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        Log.verbose?.message("verbose")
+        Log.debug?.message("debug")
+        Log.info?.message("info")
+        Log.warning?.message("warning")
+        Log.error?.message("error")
+        
     }
 
     override func didReceiveMemoryWarning() {
