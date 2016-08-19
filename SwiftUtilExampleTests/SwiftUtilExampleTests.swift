@@ -10,20 +10,66 @@ import XCTest
 @testable import SwiftUtilExample
 
 class SwiftUtilExampleTests: XCTestCase {
+    let testDirectory = MWUtil.applicationDocumentsDirectory()!.URLByAppendingPathComponent("Test")
+    var setupLogger = false
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        if !setupLogger {
+            setupLogger = true
+            MWUtil.setupCleanRoomLogger()
+        }
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testApplicationDocumentsDirectory() {
+        XCTAssertNotNil(MWUtil.applicationDocumentsDirectory(), "document directory should not be empty")
+    }
+    
+    func testDirectoryExists() {
+        let documentsPath = MWUtil.applicationDocumentsDirectory()!.path!
+        XCTAssertTrue(MWUtil.directoryExists(documentsPath), "can't find : \(documentsPath)")
+    }
+    
+    func testCreateDirectory() {
+        let newDirectory = testDirectory.URLByAppendingPathComponent("useless directory")
+        MWUtil.createDirectory(newDirectory)
+        XCTAssertTrue(MWUtil.directoryExists(newDirectory.path!), "create directory failed")
+    }
+    
+    func testRemoveDirectory() {
+        MWUtil.createDirectory(testDirectory)
+        let testDirectoryPath = testDirectory.path!
+        XCTAssertTrue(MWUtil.directoryExists(testDirectoryPath), "can't create folder \(testDirectoryPath)")
+        
+        for folderName in ["Folder1", "Folder2"] {
+            let folder = testDirectory.URLByAppendingPathComponent(folderName)
+            MWUtil.createDirectory(folder)
+            let folderPath = folder.path!
+            XCTAssertTrue(MWUtil.directoryExists(folderPath), "can't create folder \(folderPath)")
+        }
+        
+        
+        let textFile = testDirectory.URLByAppendingPathComponent("Folder2/my.txt")
+        
+        let text = "1\n2\n3\n"
+        do {
+            try text.writeToURL(textFile, atomically: true, encoding: NSUTF8StringEncoding)
+        }
+        catch let error as NSError {
+            print("can't write file \(error.localizedDescription)")
+        }
+        
+        XCTAssertTrue(MWUtil.directoryExists(textFile.path!), "can't find \(textFile.path!)")
+        
+        MWUtil.removeDirectory(testDirectory)
+        
+        XCTAssertFalse(MWUtil.directoryExists(testDirectory.path!), "can't remove \(testDirectory.path!)")
+        
+        MWUtil.removeDirectory(testDirectory)
     }
     
     func testPerformanceExample() {
@@ -32,5 +78,4 @@ class SwiftUtilExampleTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-    
 }

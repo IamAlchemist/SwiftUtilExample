@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		645D53291D66C3E10011B367 /* CleanroomASL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64EAFF171D643BF400F3B70E /* CleanroomASL.framework */; };
+		645D532A1D66C3E30011B367 /* CleanroomASL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64EAFF171D643BF400F3B70E /* CleanroomASL.framework */; };
+		645D532B1D66C3E60011B367 /* CleanroomLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64EAFF181D643BF400F3B70E /* CleanroomLogger.framework */; };
+		645D532C1D66C3E70011B367 /* CleanroomLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64EAFF181D643BF400F3B70E /* CleanroomLogger.framework */; };
 		64EAFED91D631A9500F3B70E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EAFED81D631A9500F3B70E /* AppDelegate.swift */; };
 		64EAFEDB1D631A9500F3B70E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EAFEDA1D631A9500F3B70E /* ViewController.swift */; };
 		64EAFEDE1D631A9500F3B70E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64EAFEDC1D631A9500F3B70E /* Main.storyboard */; };
@@ -81,6 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				645D53291D66C3E10011B367 /* CleanroomASL.framework in Frameworks */,
+				645D532B1D66C3E60011B367 /* CleanroomLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +94,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				645D532A1D66C3E30011B367 /* CleanroomASL.framework in Frameworks */,
+				645D532C1D66C3E70011B367 /* CleanroomLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +203,7 @@
 				64EAFEE81D631A9500F3B70E /* Sources */,
 				64EAFEE91D631A9500F3B70E /* Frameworks */,
 				64EAFEEA1D631A9500F3B70E /* Resources */,
+				645D532D1D66C4820011B367 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -213,6 +222,7 @@
 				64EAFEF31D631A9500F3B70E /* Sources */,
 				64EAFEF41D631A9500F3B70E /* Frameworks */,
 				64EAFEF51D631A9500F3B70E /* Resources */,
+				645D532E1D66CB700011B367 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -301,6 +311,37 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		645D532D1D66C4820011B367 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/CleanroomASL.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CleanroomLogger.framework",
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		645D532E1D66CB700011B367 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/CleanroomASL.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CleanroomLogger.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		64EAFF161D643BBB00F3B70E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -500,6 +541,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SwiftUtilExampleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.morgenworks.SwiftUtilExampleTests;
@@ -512,6 +557,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SwiftUtilExampleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.morgenworks.SwiftUtilExampleTests;
@@ -523,6 +572,10 @@
 		64EAFF071D631A9500F3B70E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SwiftUtilExampleUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.morgenworks.SwiftUtilExampleUITests;
@@ -534,6 +587,10 @@
 		64EAFF081D631A9500F3B70E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SwiftUtilExampleUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.morgenworks.SwiftUtilExampleUITests;
@@ -561,6 +618,7 @@
 				64EAFF021D631A9500F3B70E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		64EAFF031D631A9500F3B70E /* Build configuration list for PBXNativeTarget "SwiftUtilExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -569,6 +627,7 @@
 				64EAFF051D631A9500F3B70E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		64EAFF061D631A9500F3B70E /* Build configuration list for PBXNativeTarget "SwiftUtilExampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -577,6 +636,7 @@
 				64EAFF081D631A9500F3B70E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
