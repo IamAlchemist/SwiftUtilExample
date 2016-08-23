@@ -113,12 +113,12 @@
 		64EAFECC1D631A9500F3B70E = {
 			isa = PBXGroup;
 			children = (
-				64EAFF1B1D643BF800F3B70E /* Frameworks */,
+				64EAFF091D631C7E00F3B70E /* Util */,
 				64EAFED71D631A9500F3B70E /* SwiftUtilExample */,
 				64EAFEEF1D631A9500F3B70E /* SwiftUtilExampleTests */,
 				64EAFEFA1D631A9500F3B70E /* SwiftUtilExampleUITests */,
+				64EAFF1B1D643BF800F3B70E /* Frameworks */,
 				64EAFED61D631A9500F3B70E /* Products */,
-				64EAFF091D631C7E00F3B70E /* Util */,
 			);
 			sourceTree = "<group>";
 		};
