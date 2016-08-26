@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		645639FE1D703113002CA8B9 /* MWDBHelperPerformace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645639FD1D703113002CA8B9 /* MWDBHelperPerformace.swift */; };
 		645D53291D66C3E10011B367 /* CleanroomASL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64EAFF171D643BF400F3B70E /* CleanroomASL.framework */; };
 		645D532A1D66C3E30011B367 /* CleanroomASL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64EAFF171D643BF400F3B70E /* CleanroomASL.framework */; };
 		645D532B1D66C3E60011B367 /* CleanroomLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64EAFF181D643BF400F3B70E /* CleanroomLogger.framework */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		645639FD1D703113002CA8B9 /* MWDBHelperPerformace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MWDBHelperPerformace.swift; path = ../Util/MWDBHelperPerformace.swift; sourceTree = "<group>"; };
 		64A959D31D67EFCF005167D5 /* MWUtilTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MWUtilTests.swift; path = Util/MWUtilTests.swift; sourceTree = SOURCE_ROOT; };
 		64A959D71D67F06A005167D5 /* MWDBHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MWDBHelperTests.swift; path = Util/MWDBHelperTests.swift; sourceTree = SOURCE_ROOT; };
 		64A959D91D67F529005167D5 /* DBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		64EAFEEF1D631A9500F3B70E /* SwiftUtilExampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				645639FD1D703113002CA8B9 /* MWDBHelperPerformace.swift */,
 				64C345E51D6D8B03003CDC9B /* MWUserDefaultsTests.swift */,
 				64A959D71D67F06A005167D5 /* MWDBHelperTests.swift */,
 				64A959D31D67EFCF005167D5 /* MWUtilTests.swift */,
@@ -400,6 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64EAFF141D631CA100F3B70E /* Util.swift in Sources */,
+				645639FE1D703113002CA8B9 /* MWDBHelperPerformace.swift in Sources */,
 				64C345E91D6D8B76003CDC9B /* UserDefaults.swift in Sources */,
 				64A959D41D67EFCF005167D5 /* MWUtilTests.swift in Sources */,
 				64C345E61D6D8B03003CDC9B /* MWUserDefaultsTests.swift in Sources */,
